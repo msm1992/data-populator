@@ -1,0 +1,15 @@
+{
+   "name":"StudioGhibliAPI",
+   "version":"1.0.0",
+   "context":"/ghibli",
+   "policies":["Unlimited", "Bronze"],
+   "endpointConfig":{
+      "endpoint_type":"http",
+      "sandbox_endpoints":{
+         "url":"https://ghibliapi.herokuapp.com"
+      },
+      "production_endpoints":{
+         "url":"https://ghibliapi.herokuapp.com"
+      }
+   }
+}

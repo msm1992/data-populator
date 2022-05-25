@@ -1,0 +1,8 @@
+  {
+      "callbackUrl": "wso2.org",
+      "clientName": "efgh.com-publish",
+      "tokenScope": "Production",
+      "owner": "publisher_user@efgh.com",
+      "grantType": "password refresh_token",
+      "saasApp": true
+  }

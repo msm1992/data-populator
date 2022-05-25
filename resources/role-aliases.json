@@ -1,0 +1,23 @@
+{
+   "count":3,
+   "list":[
+      {
+         "role":"Internal/publisher",
+         "aliases":[
+            "custom_publisher"
+         ]
+      },
+      {
+         "role":"Internal/creator",
+         "aliases":[
+            "custom_creator"
+         ]
+      },
+      {
+         "role":"Internal/subscriber",
+         "aliases":[
+            "custom_subscriber"
+         ]
+      }
+   ]
+}

@@ -1,0 +1,11 @@
+  <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://org.apache.axis2/xsd">
+     <soapenv:Header/>
+     <soapenv:Body>
+        <xsd:addRole>
+           <xsd:roleName>custom_subscriber</xsd:roleName>
+           <xsd:permissions>/permission/admin/login</xsd:permissions>
+           <xsd:permissions>/permission/admin/manage/api/subscribe</xsd:permissions>
+           <xsd:isSharedRole>false</xsd:isSharedRole>
+        </xsd:addRole>
+     </soapenv:Body>
+  </soapenv:Envelope>

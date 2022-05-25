@@ -1,0 +1,15 @@
+  <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.mgt.tenant.carbon.wso2.org" xmlns:xsd="http://beans.common.stratos.carbon.wso2.org/xsd">
+     <soapenv:Header/>
+     <soapenv:Body>
+        <ser:addTenant>
+           <ser:tenantInfoBean>
+              <xsd:admin>admin</xsd:admin>
+              <xsd:adminPassword>admin</xsd:adminPassword>
+              <xsd:firstname>admin</xsd:firstname>
+              <xsd:lastname>admin</xsd:lastname>
+              <xsd:email>admin@gmail.com</xsd:email>
+              <xsd:tenantDomain>mgr2.com</xsd:tenantDomain>
+           </ser:tenantInfoBean>
+        </ser:addTenant>
+     </soapenv:Body>
+  </soapenv:Envelope>

@@ -1,0 +1,10 @@
+  <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://org.apache.axis2/xsd" xmlns:xsd1="http://common.mgt.user.carbon.wso2.org/xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <xsd:addUser>
+         <xsd:userName>subscriber_user</xsd:userName>
+         <xsd:password>pass123</xsd:password>
+         <xsd:roles>custom_subscriber</xsd:roles>
+      </xsd:addUser>
+   </soapenv:Body>
+  </soapenv:Envelope>
