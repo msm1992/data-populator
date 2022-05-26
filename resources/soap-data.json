@@ -1,0 +1,17 @@
+{
+   "name":"PhoneVerifyAPI",
+   "version":"1.0",
+   "context":"/phoneverify",
+   "policies":[
+      "Unlimited"
+   ],
+   "endpointConfig":{
+      "endpoint_type":"http",
+      "sandbox_endpoints":{
+         "url":"https://ws.cdyne.com/phoneverify/phoneverify.asmx"
+      },
+      "production_endpoints":{
+         "url":"https://ws.cdyne.com/phoneverify/phoneverify.asmx"
+      }
+   }
+}

@@ -8,7 +8,7 @@
               <xsd:firstname>admin</xsd:firstname>
               <xsd:lastname>admin</xsd:lastname>
               <xsd:email>admin@gmail.com</xsd:email>
-              <xsd:tenantDomain>efgh.com</xsd:tenantDomain>
+              <xsd:tenantDomain>efg1.com</xsd:tenantDomain>
            </ser:tenantInfoBean>
         </ser:addTenant>
      </soapenv:Body>
