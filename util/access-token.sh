@@ -25,4 +25,4 @@ get_access_token() {
     echo $access_token
 }
 
-#get_access_token "creator_user" "Test44" "pass123" "apim:api_view apim:api_create"
+#get_access_token "publisher_user" "Test44" "pass123" "apim:api_publish"

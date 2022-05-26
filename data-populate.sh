@@ -92,6 +92,9 @@ for tenant in ${tenants[@]}; do
    publish_api $api_id $publish_access_token
    #attach documents
    add_documents_to_api $publish_access_token $api_id $creator_user
+   #create and deploy revision
+   revision_id=$(create_revision $publish_access_token "./resources/revision-data.json" $api_id)
+   deploy_revision $publish_access_token $api_id $revision_id "./resources/revision-deploy-payload.json"
 
    #create and publish hello api
    echo "\n\nCreating Rest API with ./resources/hello-api.json"
@@ -99,6 +102,9 @@ for tenant in ${tenants[@]}; do
    publish_api $api_id $publish_access_token
    #attach documents
    add_documents_to_api $publish_access_token $api_id $creator_user
+   #create and deploy revision
+   revision_id=$(create_revision $publish_access_token "./resources/revision-data.json" $api_id)
+   deploy_revision $publish_access_token $api_id $revision_id "./resources/revision-deploy-payload.json"
 
    #create WSDL apis
    echo "\n\nCreating SOAP API"
@@ -106,6 +112,9 @@ for tenant in ${tenants[@]}; do
    publish_api $api_id $publish_access_token
    #attach documents
    add_documents_to_api $publish_access_token $api_id $creator_user
+   #create and deploy revision
+   revision_id=$(create_revision $publish_access_token "./resources/revision-data.json" $api_id)
+   deploy_revision $publish_access_token $api_id $revision_id "./resources/revision-deploy-payload.json"
 
    #create GRAPHQL apis
    echo "\n\nCreating GraphQL API - StarWars"
@@ -113,4 +122,8 @@ for tenant in ${tenants[@]}; do
    publish_api $api_id $publish_access_token
    #attach documents
    add_documents_to_api $publish_access_token $api_id $creator_user
+   #create and deploy revision
+   revision_id=$(create_revision $publish_access_token "./resources/revision-data.json" $api_id)
+   deploy_revision $publish_access_token $api_id $revision_id "./resources/revision-deploy-payload.json"
+
 done
