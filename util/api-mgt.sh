@@ -1,9 +1,11 @@
 #!/bin/sh
 
+publisher_rest_api="https://localhost:9443/api/am/publisher/v1"
+
 #$1 - create access_token
 #$2 - api payload
 create_api() {
-  local api_id=$(curl -k -X POST -H "Authorization: Bearer $1" -H "Content-Type: application/json" -d @$2 "https://127.0.0.1:9443/api/am/publisher/v2/apis" | jq -r '.id')
+  local api_id=$(curl -k -X POST -H "Authorization: Bearer $1" -H "Content-Type: application/json" -d @$2 "$publisher_rest_api/apis" | jq -r '.id')
   echo $api_id
 }
 
@@ -11,7 +13,7 @@ create_api() {
 #$2 - swagger payload (ex: swagger.yaml)
 #$3 - additional api properties
 import_openapi() {
-    local api_id=$(curl -k -H "Authorization: Bearer $1" -F file=@$2 -F additionalProperties=@$3 "https://127.0.0.1:9443/api/am/publisher/v2/apis/import-openapi" | jq -r '.id')
+    local api_id=$(curl -k -H "Authorization: Bearer $1" -F file=@$2 -F additionalProperties=@$3 "$publisher_rest_api/apis/import-openapi" | jq -r '.id')
     echo $api_id
 }
 
@@ -19,34 +21,34 @@ import_openapi() {
 #$2 - access-token (with apim:publish scope)
 publish_api() {
   echo "Publishing API $1"
-  curl -v -k -H "Authorization: Bearer $2" -X POST "https://localhost:9443/api/am/publisher/v2/apis/change-lifecycle?apiId=$1&action=Publish"
+  curl -v -k -H "Authorization: Bearer $2" -X POST "$publisher_rest_api/apis/change-lifecycle?apiId=$1&action=Publish"
   sleep 5
 }
 
 import_wsdl() {
-  local api_id=$(curl -k -H "Authorization: Bearer $1" -F "url=$2" -F additionalProperties=@$3 "https://127.0.0.1:9443/api/am/publisher/v2/apis/import-wsdl" | jq -r '.id')
+  local api_id=$(curl -k -H "Authorization: Bearer $1" -F "url=$2" -F additionalProperties=@$3 "$publisher_rest_api/apis/import-wsdl" | jq -r '.id')
   echo $api_id
 }
 
-import_graphql_schema() {
-    local api_id=$(curl -k -H "Authorization: Bearer $1" -F file=@$2 -F additionalProperties=@$3 "https://127.0.0.1:9443/api/am/publisher/v2/apis/import-graphql-schema" | jq -r '.id')
-    echo $api_id
-}
 
+import_graphql_schema() {
+  local api_id=$(curl -k -H "Authorization: Bearer $1" -F "type= GraphQL" -F file=@$2 -F additionalProperties=@$3 "$publisher_rest_api/apis/import-graphql-schema" | jq -r '.id')
+  echo $api_id
+}
 
 add_document() {
     update_document_payload $3 $4 $5 $6 $7
-    local doc_id=$(curl -k -X POST -H "Authorization: Bearer $1" -H "Content-Type: application/json" -d @./resources/doc-data.json "https://127.0.0.1:9443/api/am/publisher/v2/apis/$2/documents" | jq -r '.documentId')
+    local doc_id=$(curl -k -X POST -H "Authorization: Bearer $1" -H "Content-Type: application/json" -d @./resources/doc-data.json "$publisher_rest_api/apis/$2/documents" | jq -r '.documentId')
     echo $doc_id
 }
 
 create_revision() {
-    local revision_id=$(curl -k -X POST -H "Authorization: Bearer $1" -H "Content-Type: application/json" -d @$2 "https://127.0.0.1:9443/api/am/publisher/v2/apis/$3/revisions" | jq -r '.id')
+    local revision_id=$(curl -k -X POST -H "Authorization: Bearer $1" -H "Content-Type: application/json" -d @$2 "$publisher_rest_api/apis/$3/revisions" | jq -r '.id')
     echo $revision_id
 }
 
 deploy_revision() {
-  curl -v -k -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $1" -d @$4 "https://127.0.0.1:9443/api/am/publisher/v2/apis/$2/deploy-revision?revisionId=$3"
+  curl -v -k -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $1" -d @$4 "$publisher_rest_api/apis/$2/deploy-revision?revisionId=$3"
 }
 
 update_document_payload() {

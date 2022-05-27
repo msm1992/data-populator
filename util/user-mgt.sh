@@ -1,5 +1,7 @@
 #!/bin/sh
 
+admin_rest_api="https://localhost:9443/api/am/admin/v1"
+
 add_user() {
     echo "\nAdding User $1$3----------------------------------------------"
 
@@ -17,7 +19,7 @@ add_role() {
 }
 
 update_role_alias() {
-    curl -v -k -X PUT -H "Authorization: Bearer $1" -H "Content-Type: application/json" -d @./resources/role-aliases.json "https://127.0.0.1:9443/api/am/admin/v2/system-scopes/role-aliases"
+    curl -v -k -X PUT -H "Authorization: Bearer $1" -H "Content-Type: application/json" -d @./resources/role-aliases.json "$admin_rest_api/system-scopes/role-aliases"
 
 }
 

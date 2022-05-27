@@ -1,5 +1,7 @@
 #!/bin/bash
 
+token_endpoint="https://localhost:8243/token"
+
 update_client_request() {
   eval "cat >./resources/payload.json <<EOF
   {
@@ -21,8 +23,9 @@ get_access_token() {
     update_client_request $1 $2
     client_credentials=$(curl -k -u $1:$3 -H "Content-Type: application/json" -d @./resources/payload.json "https://localhost:9443/client-registration/v0.17/register"| jq -r '.clientId + ":" + .clientSecret')
     #echo $client_credentials
-    access_token=$(curl -k -d "grant_type=password&username=$1&password=$3&scope=$4" -u $client_credentials "https://localhost:9443/oauth2/token" | jq -r '.access_token')
+    #curl -k -d "grant_type=password&username=$1&password=$3&scope=$4" -u $client_credentials "$token_endpoint" -v
+    access_token=$(curl -k -d "grant_type=password&username=$1&password=$3&scope=$4" -u $client_credentials "$token_endpoint" | jq -r '.access_token')
     echo $access_token
 }
 
-#get_access_token "publisher_user" "Test44" "pass123" "apim:api_publish"
+#get_access_token "creator_user" "Test44" "pass123" "apim:api_create"

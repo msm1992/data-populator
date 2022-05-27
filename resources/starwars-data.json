@@ -1,9 +1,9 @@
 {
-   "name":"StarWars",
+   "name":"StarwarsAPI",
    "version":"1.0",
    "context":"starwars",
    "policies":[
-      "Unlimited"
+      "Gold"
    ],
    "operations":[
       {
@@ -19,9 +19,7 @@
 
          ],
          "amznResourceName":null,
-         "amznResourceTimeout":null,
-         "payloadSchema":null,
-         "uriMapping":null
+         "amznResourceTimeout":null
       },
       {
          "id":"1",
@@ -36,9 +34,7 @@
 
          ],
          "amznResourceName":null,
-         "amznResourceTimeout":null,
-         "payloadSchema":null,
-         "uriMapping":null
+         "amznResourceTimeout":null
       },
       {
          "id":"2",
@@ -53,9 +49,7 @@
 
          ],
          "amznResourceName":null,
-         "amznResourceTimeout":null,
-         "payloadSchema":null,
-         "uriMapping":null
+         "amznResourceTimeout":null
       },
       {
          "id":"3",
@@ -70,9 +64,7 @@
 
          ],
          "amznResourceName":null,
-         "amznResourceTimeout":null,
-         "payloadSchema":null,
-         "uriMapping":null
+         "amznResourceTimeout":null
       },
       {
          "id":"4",
@@ -87,9 +79,7 @@
 
          ],
          "amznResourceName":null,
-         "amznResourceTimeout":null,
-         "payloadSchema":null,
-         "uriMapping":null
+         "amznResourceTimeout":null
       },
       {
          "id":"5",
@@ -104,9 +94,7 @@
 
          ],
          "amznResourceName":null,
-         "amznResourceTimeout":null,
-         "payloadSchema":null,
-         "uriMapping":null
+         "amznResourceTimeout":null
       },
       {
          "id":"6",
@@ -121,9 +109,7 @@
 
          ],
          "amznResourceName":null,
-         "amznResourceTimeout":null,
-         "payloadSchema":null,
-         "uriMapping":null
+         "amznResourceTimeout":null
       },
       {
          "id":"7",
@@ -138,9 +124,7 @@
 
          ],
          "amznResourceName":null,
-         "amznResourceTimeout":null,
-         "payloadSchema":null,
-         "uriMapping":null
+         "amznResourceTimeout":null
       },
       {
          "id":"8",
@@ -155,9 +139,7 @@
 
          ],
          "amznResourceName":null,
-         "amznResourceTimeout":null,
-         "payloadSchema":null,
-         "uriMapping":null
+         "amznResourceTimeout":null
       },
       {
          "id":"9",
@@ -172,9 +154,7 @@
 
          ],
          "amznResourceName":null,
-         "amznResourceTimeout":null,
-         "payloadSchema":null,
-         "uriMapping":null
+         "amznResourceTimeout":null
       },
       {
          "id":"10",
@@ -189,9 +169,7 @@
 
          ],
          "amznResourceName":null,
-         "amznResourceTimeout":null,
-         "payloadSchema":null,
-         "uriMapping":null
+         "amznResourceTimeout":null
       },
       {
          "id":"11",
@@ -206,18 +184,19 @@
 
          ],
          "amznResourceName":null,
-         "amznResourceTimeout":null,
-         "payloadSchema":null,
-         "uriMapping":null
+         "amznResourceTimeout":null
       }
    ],
    "endpointConfig":{
       "endpoint_type":"http",
       "sandbox_endpoints":{
-         "url":"http://localhost:8080/graphql"
+         "url":"https://localhost:8080/graphql"
       },
       "production_endpoints":{
-         "url":"http://localhost:8080/graphql"
+         "url":"https://localhost:8080/graphql"
       }
-   }
+   },
+   "gatewayEnvironments":[
+      "Production and Sandbox"
+   ]
 }
