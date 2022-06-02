@@ -190,10 +190,10 @@
    "endpointConfig":{
       "endpoint_type":"http",
       "sandbox_endpoints":{
-         "url":"https://localhost:8080/graphql"
+         "url":"http://localhost:8080/graphql"
       },
       "production_endpoints":{
-         "url":"https://localhost:8080/graphql"
+         "url":"http://localhost:8080/graphql"
       }
    },
    "gatewayEnvironments":[

@@ -9,7 +9,6 @@
    "cacheTimeout":300,
    "hasThumbnail":false,
    "isDefaultVersion":false,
-   "isRevision":false,
    "enableSchemaValidation":false,
    "type":"HTTP",
    "transport":[
@@ -30,9 +29,6 @@
    "maxTps":null,
    "visibility":"PUBLIC",
    "subscriptionAvailability":"CURRENT_TENANT",
-   "additionalProperties":[
-
-   ],
    "businessInformation":{
       "businessOwner":"jane doe",
       "businessOwnerEmail":"jane@gmail.com",
@@ -62,12 +58,6 @@
          "OPTIONS"
       ]
    },
-   "websubSubscriptionConfiguration":{
-      "enable":false,
-      "secret":"",
-      "signingAlgorithm":"SHA1",
-      "signatureHeader":"x-hub-signature"
-   },
    "endpointConfig":{
       "endpoint_type":"http",
       "sandbox_endpoints":{
@@ -90,10 +80,7 @@
    "keyManagers":[
       "all"
    ],
-   "advertiseInfo":{
-      "advertised":false,
-      "originalDevPortalUrl":null,
-      "apiOwner":"creator_user",
-      "vendor":"WSO2"
-   }
+   "gatewayEnvironments":[
+      "Production and Sandbox"
+   ]
 }

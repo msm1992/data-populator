@@ -13,5 +13,8 @@
       "production_endpoints":{
          "url":"https://ws.cdyne.com/phoneverify/phoneverify.asmx"
       }
-   }
+   },
+   "gatewayEnvironments":[
+      "Production and Sandbox"
+   ]
 }

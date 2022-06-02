@@ -11,5 +11,8 @@
       "production_endpoints":{
          "url":"https://ghibliapi.herokuapp.com"
       }
-   }
+   },
+   "gatewayEnvironments":[
+      "Production and Sandbox"
+   ]
 }
